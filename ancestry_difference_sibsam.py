@@ -60,7 +60,8 @@ else:
     print("Chrm code and ID not recognized for the 5 chrm arms of Drosophila melanogaster.\n Edit the script accordingly.\n Quittind.\n")
     quit()
 
-outlog = open(output_prefix+"_"+chrmID+".log","w")
+output_prefix = output_preix+"_"+chrmID
+outlog = open(output_prefix+".log","w")
 
 ## Using vcfSite class and parentalDict class
 print("Calculating parental SNPs without indels.")
