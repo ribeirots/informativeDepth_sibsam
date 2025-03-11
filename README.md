@@ -1,1 +1,7 @@
 # informativeDepth_sibsam
+
+This set of scripts is used to generate the input file for SIBSAM. For each window along the genome it will calculate for a pair of extreme phenotype pools (eg. darkest and lightest pool of offspring) (1) the number of reads in each pool that can be used to distinguish the two parental strains and (2) the ancestral difference, which is the proportion of reads coming from the targeted phenotype parent (eg. the dark parent in a dark pigmentation study) in the target pool (eg. the dark offspring pool) minus the proportion of reads coming from the target phenotype parent in the non-target pool (eg. the light offspring pool).
+
+It requires genomic window information (including centimorgan position) as well as parental and offspring genetic data. The parental data is taken in the form of sites and indel VCF files (two files for each parent) and the offspring data is taken in the form of SAM files. The script is designed to be used one chromosome arm at a time.
+
+The “ancestry_difference_sibsam.py” is the only one that needs to be called when running this step, it will call classes and functions from the other scripts. vcfSite class is read by parentalDict class. SAMread class is read by mate_read_list class. matedPair class is read by both parentalDict and window class. Further information can be seen within the comments in the scripts.
